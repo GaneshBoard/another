@@ -48,6 +48,14 @@ nav button:hover {
     color: gray;
 }
 
+nav div a img {
+    transition: transform 0.2s;
+}
+
+nav div a img:hover {
+    transform: scale(1.1);
+}
+
 @media (min-width: 640px) {
     nav {
         flex-wrap: nowrap; /* Disable wrapping for larger screens */
