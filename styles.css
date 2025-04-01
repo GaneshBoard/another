@@ -15,26 +15,24 @@ body {
 
 /* Navbar */
 nav {
-    background-color: black;
-    color: white;
-    padding: 0.5rem 1rem; /* Adjust padding for mobile */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Space between logo and buttons */
     align-items: center;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    padding: 1rem; /* Standard padding */
+    flex-wrap: wrap; /* Prevent wrapping to keep everything in one line */
 }
 
 nav img {
-    margin-left: 0; /* Center logo */
-    width: 5rem; /* Reduce logo size for mobile */
+    margin-left: 0; /* Align logo to the left */
+    width: 6rem; /* Standard logo size */
 }
 
 nav div {
-    flex: 1; /* Allow buttons to take full width */
     display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 0.5rem; /* Add spacing between logo and buttons */
+    justify-content: flex-end; /* Align buttons to the right */
+    gap: 1.5rem; /* Add spacing between buttons */
+    flex: 1; /* Allow buttons to take remaining space */
+    margin: 0; /* Remove extra spacing */
 }
 
 nav button {
@@ -113,7 +111,7 @@ section.flex {
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 0; /* Remove extra space above the banner */
-    margin-top: -1rem; /* Adjust margin to reduce space between header and banner */
+    margin-top: -0rem; /* Adjust margin to reduce space between header and banner */
 }
 
 @media (min-width: 640px) {
@@ -158,29 +156,29 @@ footer a:hover img {
 }
 
 /* Responsive styles for mobile devices */
-@media (max-width: 640px) {
+@media (max-width: 400px) {
     /* Navbar adjustments */
     nav {
-        flex-direction: column; /* Stack logo and buttons vertically */
-        align-items: center; /* Center align items */
-        padding: 0.5rem; /* Reduce padding */
+        flex-wrap: nowrap; /* Ensure no wrapping in mobile view */
+        padding: 0.5rem; /* Reduce padding for mobile */
     }
 
     nav img {
         width: 4rem; /* Smaller logo for mobile */
-        margin-bottom: 0.5rem; /* Add spacing below logo */
     }
 
     nav div {
-        flex-direction: column; /* Stack buttons vertically */
-        gap: 0.5rem; /* Reduce gap between buttons */
+        gap: 0.5rem; /* Reduce spacing between buttons for mobile */
     }
 
     /* Banner adjustments */
     section.flex {
-        height: 400px; /* Adjust height for mobile */
-        padding-left: 0.5rem; /* Reduce padding */
-        padding-right: 0.5rem;
+        height: 100px; /* Adjust height for mobile */
+        padding-left: -5rem; /* Reduce padding */
+        padding-right: -5rem;
+        padding-top: -0rem; /* Remove extra space above the banner */
+    margin-top: -13rem;
+margin-bottom: -13rem;} /* Adjust margin to reduce space between header and banner */
     }
 
     /* Product cards adjustments */
@@ -189,7 +187,7 @@ footer a:hover img {
     }
 
     .card img {
-        width: 8rem; /* Smaller images for mobile */
+        width: 12rem; /* Smaller images for mobile */
     }
 
     .card button {
@@ -213,4 +211,4 @@ footer a:hover img {
         width: 1.25rem; /* Smaller social icons */
         height: 1.25rem;
     }
-}
+
