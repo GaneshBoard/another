@@ -23,7 +23,7 @@ nav {
 }
 
 nav img {
-    margin-left: 0; /* Align logo to the left */
+    margin-left: 10; /* Align logo to the left */
     width: 6rem; /* Standard logo size */
 }
 
