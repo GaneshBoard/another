@@ -5,45 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Another Sizes</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body class="bg-white text-black">
-    <!-- Navbar -->
-    <nav class="bg-black text-white p-4 flex justify-between items-center">
-        <img src="logo.svg" alt="logo" class="w-24 sm:w-32">
-        <div class="flex gap-6">
-            <a href="https://www.facebook.com/profile.php?id=61562906250418" target="_blank" class="hover:text-gray-400">
-                <img src="./img/face.png" alt="Facebook" class="w-6 h-6">
-            </a>
-            <a href="https://www.instagram.com/another_sizes?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover:text-gray-400">
-                <img src="./img/insta.png" alt="Instagram" class="w-6 h-6">
-            </a>
-            <a href="https://api.whatsapp.com/send/?phone=%2B573206097543&text&type=phone_number&app_absent=0" target="_blank" class="hover:text-gray-400">
-                <img src="./img/whatsa.png" alt="WhatsApp" class="w-6 h-6">
-            </a>
-            <a href="https://www.tiktok.com/@anothersizes?lang=es" target="_blank" class="hover:text-gray-400">
-                <img src="./img/tik.png" alt="TikTok" class="w-6 h-6">
-            </a>
-        </div>
-    </nav>
-    
     <!-- Moving Text Bar -->
-    <div class="bg-black text-white py-2 overflow-hidden">
+    <div class="bg-white text-black py-2 overflow-hidden">
         <marquee behavior="scroll" direction="left" scrollamount="8" class="text-sm sm:text-base">
             ¡Bienvenidos a Another Sizes! Ofertas exclusivas en camisetas, hoodies y más. ¡No te lo pierdas!
         </marquee>
     </div>
 
+    <!-- Navbar -->
+    <nav class="bg-black text-white p-4 flex justify-between items-center">
+        <img src="logo.svg" alt="logo" class="w-24 sm:w-32 ml-6">
+        <div class="flex gap-8">
+            <button class="text-white hover:text-gray-400 text-sm sm:text-base mr-4 font-sans">Inicio</button>
+            <button class="text-white hover:text-gray-400 text-sm sm:text-base mr-4 font-sans">Colección</button>
+            <button class="text-white hover:text-gray-400 text-sm sm:text-base mr-4 font-sans">Contacto</button>
+        </div>
+    </nav>
+    
     <!-- Sección Principal -->
-    <section class="flex justify-center items-center px-4 py-2 h-screen">
+    <section class="flex justify-center items-center px-0 py-0" style="height: 600px;">
         <div class="border-0 rounded-none overflow-hidden w-full">
             <img src="IMAGEN BANNER.png" alt="Preventa" class="w-full h-full object-cover">
         </div>
     </section>
     
     <!-- Productos -->
-    <section class="px-4 sm:px-8 pb-12">
+    <section class="px-8 sm:px-16 pb-10">
         <h2 class="text-center text-lg sm:text-2xl font-bold mb-8">CAMISETAS</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
             <!-- Producto 1 -->
             <div class="border-2 border-black p-4 rounded-lg flex flex-col items-center">
                 <img src="./img/CAMISA-DANCE.gif" alt="Producto 1" class="w-32 sm:w-48 mb-4">
@@ -87,9 +80,9 @@
     </section>
 
     <!-- Busos -->
-    <section class="px-4 sm:px-8 pb-16">
+    <section class="px-8 sm:px-16 pb-10">
         <h2 class="text-center text-lg sm:text-2xl font-bold mb-8">HOODIES</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
            
             <!-- Buso 1 -->
             <div class="border-2 border-black p-4 rounded-lg flex flex-col items-center">
@@ -134,9 +127,9 @@
     </section>
 
     <!-- Sección Mujeres -->
-    <section class="px-4 sm:px-8 pb-16">
+    <section class="px-8 sm:px-16 pb-10">
         <h2 class="text-center text-lg sm:text-2xl font-bold mb-8">MUJERES</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 justify-center">
+        <div class="flex justify-center gap-12">
             <!-- Producto Mujeres 1 -->
             <div class="border-2 border-black p-4 rounded-lg flex flex-col items-center">
                 <img src="./img/BODY-COSTILLERO.gif" alt="Producto Mujeres 1" class="w-32 sm:w-48 mb-4">
