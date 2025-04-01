@@ -7,16 +7,16 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-white text-black">
+<body class="bg-white text-black flex flex-col min-h-screen">
     <!-- Navbar -->
     <nav class="bg-black text-white p-4 flex items-center justify-between flex-nowrap">
         <a href="index.html">
             <img src="logo.svg" alt="logo" class="w-20 sm:w-32 ml-4">
         </a>
         <div class="flex gap-2 sm:gap-8 items-center">
-            <button class="text-white hover:text-gray-400 text-xs sm:text-base font-sans">Inicio</button>
-            <button class="text-white hover:text-gray-400 text-xs sm:text-base font-sans">Colección</button>
-            <button class="text-white hover:text-gray-400 text-xs sm:text-base font-sans">Contacto</button>
+            <a href="index.html" class="text-white hover:text-gray-400 text-xs sm:text-base font-sans">Inicio</a>
+            <a href="index.html#camisetas" class="text-white hover:text-gray-400 text-xs sm:text-base font-sans">Colección</a>
+            <a href="contact.html" class="text-white hover:text-gray-400 text-xs sm:text-base font-sans">Contacto</a>
         </div>
     </nav>
 
@@ -35,7 +35,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black text-white py-4 flex justify-between items-center px-8">
+    <footer class="bg-black text-white py-4 flex justify-between items-center px-8 mt-auto">
         <img src="logo.svg" alt="Another Sizes Logo" class="w-32">
         <div class="flex gap-6">
             <a href="https://www.facebook.com/profile.php?id=61562906250418" target="_blank" class="hover:text-gray-400">
