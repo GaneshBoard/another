@@ -14,7 +14,7 @@ export default async function handler(req, res) {
           customer_email: "cliente@email.com", // Email del cliente (esto puede ser dinámico)
           payment_method: {
             type: "CARD", // Tipo de pago, en este caso tarjeta
-            token: "TOKEN_DE_PRUEBA", // El token del formulario de pago
+            token: "prv_test_57eKkQlglv03QkV5tV7esD8dmY2efXcu", // El token del formulario de pago
           },
           reference: referencia, // Referencia única para el pago
         },
