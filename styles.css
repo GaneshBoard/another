@@ -17,15 +17,24 @@ body {
 nav {
     background-color: black;
     color: white;
-    padding: 1rem;
+    padding: 0.5rem 1rem; /* Adjust padding for mobile */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 nav img {
-    margin-left: 1.5rem;
-    width: 6rem;
+    margin-left: 0; /* Center logo */
+    width: 5rem; /* Reduce logo size for mobile */
+}
+
+nav div {
+    flex: 1; /* Allow buttons to take full width */
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem; /* Add spacing between logo and buttons */
 }
 
 nav button {
@@ -39,6 +48,23 @@ nav button {
 
 nav button:hover {
     color: gray;
+}
+
+@media (min-width: 640px) {
+    nav {
+        flex-wrap: nowrap; /* Disable wrapping for larger screens */
+        padding: 1rem; /* Restore padding for larger screens */
+    }
+
+    nav img {
+        width: 6rem; /* Restore logo size for larger screens */
+        margin-left: 1.5rem; /* Restore left margin for larger screens */
+    }
+
+    nav div {
+        justify-content: flex-end; /* Align buttons to the right */
+        margin-top: 0; /* Remove spacing for larger screens */
+    }
 }
 
 /* Product Cards */
@@ -96,6 +122,12 @@ section.flex {
     }
 }
 
+@media (max-width: 640px) {
+    section.flex {
+        height: 400px; /* Set height to 400px for smaller screens */
+    }
+}
+
 /* Card grid gap */
 .grid {
     gap: 3rem;
@@ -123,4 +155,62 @@ footer a img {
 
 footer a:hover img {
     filter: brightness(0.7);
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 640px) {
+    /* Navbar adjustments */
+    nav {
+        flex-direction: column; /* Stack logo and buttons vertically */
+        align-items: center; /* Center align items */
+        padding: 0.5rem; /* Reduce padding */
+    }
+
+    nav img {
+        width: 4rem; /* Smaller logo for mobile */
+        margin-bottom: 0.5rem; /* Add spacing below logo */
+    }
+
+    nav div {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 0.5rem; /* Reduce gap between buttons */
+    }
+
+    /* Banner adjustments */
+    section.flex {
+        height: 400px; /* Adjust height for mobile */
+        padding-left: 0.5rem; /* Reduce padding */
+        padding-right: 0.5rem;
+    }
+
+    /* Product cards adjustments */
+    .card {
+        padding: 0.5rem; /* Reduce padding inside cards */
+    }
+
+    .card img {
+        width: 8rem; /* Smaller images for mobile */
+    }
+
+    .card button {
+        font-size: 0.75rem; /* Smaller button text */
+        padding: 0.25rem 0.5rem; /* Adjust button padding */
+    }
+
+    /* Footer adjustments */
+    footer {
+        flex-direction: column; /* Stack footer items vertically */
+        align-items: center;
+        gap: 1rem; /* Add spacing between items */
+        padding: 1rem; /* Adjust padding */
+    }
+
+    footer img {
+        width: 6rem; /* Smaller logo in footer */
+    }
+
+    footer a img {
+        width: 1.25rem; /* Smaller social icons */
+        height: 1.25rem;
+    }
 }
