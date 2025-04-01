@@ -55,26 +55,21 @@
 
     <script>
         // JavaScript for cart functionality
-        const cartItems = [];
         const cartItemsContainer = document.getElementById('cart-items');
         const totalPriceElement = document.getElementById('total-price');
 
-        function addToCart(productName, price) {
-            cartItems.push({ productName, price });
-            renderCart();
-        }
-
         function renderCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
             cartItemsContainer.innerHTML = '';
             let total = 0;
 
-            cartItems.forEach((item, index) => {
-                total += item.price;
+            cart.forEach((item, index) => {
+                total += item.price * item.quantity;
                 const itemElement = document.createElement('div');
                 itemElement.className = 'flex justify-between items-center border-b pb-2';
                 itemElement.innerHTML = `
-                    <p class="text-sm sm:text-base">${item.productName}</p>
-                    <p class="text-sm sm:text-base">$${item.price}</p>
+                    <p class="text-sm sm:text-base">${item.productName} (x${item.quantity})</p>
+                    <p class="text-sm sm:text-base">$${item.price * item.quantity}</p>
                     <button class="text-red-500 text-xs sm:text-sm" onclick="removeFromCart(${index})">Eliminar</button>
                 `;
                 cartItemsContainer.appendChild(itemElement);
@@ -84,13 +79,13 @@
         }
 
         function removeFromCart(index) {
-            cartItems.splice(index, 1);
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
             renderCart();
         }
 
-        // Example: Add items to cart from other pages
-        // addToCart('Body Costillero', 66000);
-        // addToCart('Body Espalda', 66000);
+        renderCart();
     </script>
 </body>
 </html>
