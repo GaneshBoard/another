@@ -20,7 +20,7 @@ export default async function handler(req, res) {
         },
         {
           headers: {
-            Authorization: `Bearer prv_prod_Ing7qI5Ypxc4MvcnOuHiY9s6UQfQSYvn`, // Autenticación con tu clave privada
+            Authorization: `Bearer pub_prod_tseXJGuHcYSvcTVY91op37poFwve41PZ`, // Autenticación con tu clave privada
           },
         }
       );
