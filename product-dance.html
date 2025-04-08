@@ -42,10 +42,10 @@
                     </div>
                     <!-- Sizes -->
                     <div class="flex gap-2 mb-4">
-                        <button class="bg-black text-white px-4 py-2 text-xs sm:text-sm rounded">S</button>
-                        <button class="bg-black text-white px-4 py-2 text-xs sm:text-sm rounded">M</button>
-                        <button class="bg-black text-white px-4 py-2 text-xs sm:text-sm rounded">L</button>
-                        <button class="bg-black text-white px-4 py-2 text-xs sm:text-sm rounded">XL</button>
+                        <button class="bg-black text-white px-4 py-2 rounded size-btn" data-size="S">S</button>
+                        <button class="bg-black text-white px-4 py-2 rounded size-btn" data-size="M">M</button>
+                        <button class="bg-black text-white px-4 py-2 rounded size-btn" data-size="L">L</button>
+                        <button class="bg-black text-white px-4 py-2 rounded size-btn" data-size="XL">XL</button>
                     </div>
                     <p class="text-green-600 text-sm sm:text-base mb-4">Disponible</p>
                     <div class="flex gap-4 items-center mb-4">
@@ -109,12 +109,23 @@
         </div>
     </footer>
     <script>
+        let selectedSize = null;
+        document.querySelectorAll('.size-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                selectedSize = button.getAttribute('data-size');
+                alert(`Talla seleccionada: ${selectedSize}`);
+            });
+        });
         document.getElementById('add-to-cart-btn').addEventListener('click', () => {
             const quantity = parseInt(document.getElementById('quantity').value);
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            cart.push({ productName: 'T-shirt Savage Dance', price: 80000, quantity });
-            localStorage.setItem('cart', JSON.stringify(cart));
-            alert(`${quantity} T-shirt Savage Dance(s) agregado(s) al carrito.`);
+            if (selectedSize) {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cart.push({ productName: 'T-shirt Savage Dance', price: 80000, quantity, size: selectedSize });
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert(`${quantity} T-shirt Savage Dance(s) de talla ${selectedSize} agregado(s) al carrito.`);
+            } else {
+                alert('Por favor selecciona una talla antes de agregar al carrito.');
+            }
         });
     </script>
 </body>

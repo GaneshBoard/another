@@ -49,8 +49,12 @@
                         <label for="quantity" class="text-sm sm:text-base">Cantidad:</label>
                         <input id="quantity" type="number" min="1" value="1" class="border-2 border-black p-2 w-16 text-center">
                     </div>
+                    <div class="flex gap-2 mb-4">
+                        <button class="bg-black text-white px-4 py-2 rounded design-btn" data-design="Mariposa">Mariposa</button>
+                        <button class="bg-black text-white px-4 py-2 rounded design-btn" data-design="Corazón">Corazón</button>
+                    </div>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <button onclick="addToCart('Body Costillero', 66000)" class="bg-black text-white px-6 py-3 rounded hover:bg-gray-800 hover:scale-105 transition-transform text-sm sm:text-base">
+                        <button id="add-to-cart" class="bg-black text-white px-6 py-3 rounded hover:bg-gray-800 hover:scale-105 transition-transform text-sm sm:text-base">
                             Agregar al Carrito
                         </button>
                         <a href="https://api.whatsapp.com/send/?phone=%2B573206097543&text=Quiero%20comprar%20el%20Body%20Costillero&type=phone_number&app_absent=0" target="_blank" class="bg-black text-white px-6 py-3 rounded hover:bg-gray-800 hover:scale-105 transition-transform text-sm sm:text-base text-center">
@@ -113,6 +117,25 @@
             localStorage.setItem('cart', JSON.stringify(cart));
             alert(`${quantity} ${productName}(s) agregado(s) al carrito.`);
         }
+
+        let selectedDesign = null;
+        document.querySelectorAll('.design-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                selectedDesign = button.getAttribute('data-design');
+                alert(`Diseño seleccionado: ${selectedDesign}`);
+            });
+        });
+        document.getElementById('add-to-cart').addEventListener('click', () => {
+            const quantity = parseInt(document.getElementById('quantity').value);
+            if (selectedDesign) {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cart.push({ productName: 'Body Costillero', price: 66000, quantity, design: selectedDesign });
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert(`${quantity} Body Costillero(s) con diseño ${selectedDesign} agregado(s) al carrito.`);
+            } else {
+                alert('Por favor selecciona un diseño antes de agregar al carrito.');
+            }
+        });
     </script>
 </body>
 </html>
